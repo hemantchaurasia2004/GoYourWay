@@ -1,23 +1,30 @@
-# React + Vite
+#  Travel Itinerary Generator
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+##  Overview
+The **Personalized Travel Itinerary Generator** is a web application that creates dynamic, AI-powered travel itineraries based on user preferences like budget, interests, and trip duration. It uses **Gemini AI** to generate customized itineraries, **Firebase** for authentication and database storage, and integrates **Google APIs** for places autocomplete and photos.
 
-Currently, two official plugins are available:
+---
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react/README.md) uses [Babel](https://babeljs.io/) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+##  Features
+- **User Authentication** with Firebase and Google Auth
+- **Personalized Trip Itineraries** generated using Gemini AI
+- **Google Autocomplete** for destination search
+- **Place Photos** using Google Photos API
+- **Full Responsiveness** across devices with TailwindCSS
+- **Itinerary Storage** and retrieval using Firebase Firestore
+- **Clean, user-friendly UI** built with React and shadcn/ui components
 
+---
 
-  
+##  Tech Stack
+- **Front-End:** React, TailwindCSS, Vite
+- **Back-End:** Firebase (Firestore, Authentication)
+- **AI:** Gemini AI (for itinerary generation)
+- **APIs:** Google Places API, Google Photos API
+- **UI Library:** shadcn/ui for reusable components
+- **Routing:** React Router
 
-  
-# Trip Planner App :earth_africa:	:mountain_snow:
-
-<div style="text-align: center;"> 
- 
-## :star: Building a Fullstack AI Trip Planner with React, Gemini AI, TailwindCSS & Firebase
- 
-
+---
 
 ## Firebase Configuration
 
@@ -46,8 +53,9 @@ export { auth, db };
 ## Environment Variables
 
 ```bash
-REACT_APP_GOOGLE_API_KEY=your-google-api-key
-REACT_APP_GEMINI_API_KEY=your-gemini-api-key
+VITE_GOOGLE_PLACES_API_KEY
+VITE_GOOGLE_GEMINI_AI_API_KEY
+VITE_GOOGLE_AUTH_CLIENT_ID
 ```
 
 ## Google Authentication
@@ -109,15 +117,4 @@ firebase.firestore().collection('itineraries').add({
 ```
 
 
-# You can check app this link :point_down:
-
-## Setup .env file
-### :key: Environment Variables
-
-
-```js
-VITE_GOOGLE_PLACES_API_KEY
-VITE_GOOGLE_GEMINI_AI_API_KEY
-VITE_GOOGLE_AUTH_CLIENT_ID
-``` 
 
