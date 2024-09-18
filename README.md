@@ -19,30 +19,95 @@ Currently, two official plugins are available:
  
 
 
-  ### Features: 
+## Firebase Configuration
 
-- Environment,Vite set up
-- Firebase, Database creation
-- Google Authentication
-- Generate Trip From Gemini AI
-- React Routing
-- Shadcn/ui
-- React Google Autocomplete
-- Display place photo using Google Photo API
-- Full responsiveness on all pages
-- Deploy App on Vercel
+```javascript
+// firebase.js
+import firebase from 'firebase/app';
+import 'firebase/auth';
+import 'firebase/firestore';
 
+const firebaseConfig = {
+  apiKey: "YOUR_API_KEY",
+  authDomain: "YOUR_AUTH_DOMAIN",
+  projectId: "YOUR_PROJECT_ID",
+  storageBucket: "YOUR_STORAGE_BUCKET",
+  messagingSenderId: "YOUR_MESSAGING_SENDER_ID",
+  appId: "YOUR_APP_ID"
+};
 
-<br />
+firebase.initializeApp(firebaseConfig);
+const auth = firebase.auth();
+const db = firebase.firestore();
 
+export { auth, db };
+```
 
-## About the Project  :star2:
-![11](https://github.com/user-attachments/assets/81bdf33b-95b8-4ba0-b7f6-ab517ec54690)
-![3](https://github.com/user-attachments/assets/3d648acd-0c95-4d80-a257-4f1395edade7)
-![2](https://github.com/user-attachments/assets/35b35f6e-dbe2-4a3d-88a0-c14536688a4e)
-![1](https://github.com/user-attachments/assets/48151eb5-770f-4d8b-8149-c28a12a6fa39) 
+## Environment Variables
 
-<br />
+```bash
+REACT_APP_GOOGLE_API_KEY=your-google-api-key
+REACT_APP_GEMINI_API_KEY=your-gemini-api-key
+```
+
+## Google Authentication
+
+```javascript
+firebase.auth().signInWithPopup(googleProvider)
+  .then((result) => {
+    const user = result.user;
+    // Handle user session
+  })
+  .catch((error) => {
+    console.error("Error during login: ", error);
+  });
+```
+
+## Generate Trip (Gemini AI)
+
+```javascript
+fetch('/generateTrip', {
+  method: 'POST',
+  body: JSON.stringify({ budget, destination, duration, interests }),
+  headers: { 'Content-Type': 'application/json' },
+})
+.then(response => response.json())
+.then(data => {
+  // Handle itinerary generation
+})
+.catch(error => {
+  console.error('Error generating trip: ', error);
+});
+```
+
+## Autocomplete (Google Places API)
+
+```javascript
+fetch(`/placesAutocomplete?input=${destination}`)
+  .then(response => response.json())
+  .then(data => {
+    // Handle autocomplete suggestions
+  })
+  .catch(error => {
+    console.error('Error fetching autocomplete: ', error);
+  });
+```
+
+## Save Itinerary (Firebase Firestore)
+
+```javascript
+firebase.firestore().collection('itineraries').add({
+  userId: user.uid,
+  itinerary: itineraryData
+})
+.then(() => {
+  console.log("Itinerary saved!");
+})
+.catch((error) => {
+  console.error("Error saving itinerary: ", error);
+});
+```
+
 
 # You can check app this link :point_down:
 
