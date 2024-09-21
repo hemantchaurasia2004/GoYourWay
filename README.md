@@ -2,6 +2,12 @@
 ##  Overview
 The **Personalized Travel Itinerary Generator** is a web application that creates dynamic, AI-powered travel itineraries based on user preferences like budget, interests, and trip duration. It uses **Gemini AI** to generate customized itineraries, **Firebase** for authentication and database storage, and integrates **Google APIs** for places autocomplete and photos.
 
+### Demo Video:
+https://drive.google.com/file/d/1rS87ZsMGqHM9dktfUq0kVwII-42ug_83/view?usp=sharing
+
+### Explanatory Doc:
+https://docs.google.com/document/d/1KOkeCh72aPkhrxOti3HknoUueb-isbxj4hKx100BS5o/edit?usp=sharing
+
 ![alt text](image-2.png)
 ---
 
