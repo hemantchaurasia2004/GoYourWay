@@ -1,4 +1,4 @@
-#  Travel Itinerary Generator
+#  Go Your Way
 ##  Overview
 The **Personalized Travel Itinerary Generator** is a web application that creates dynamic, AI-powered travel itineraries based on user preferences like budget, interests, and trip duration. It uses **Gemini AI** to generate customized itineraries, **Firebase** for authentication and database storage, and integrates **Google APIs** for places autocomplete and photos.
 
